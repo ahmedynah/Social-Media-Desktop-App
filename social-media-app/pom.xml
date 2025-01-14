@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- The group ID uniquely identifies your project across all projects -->
+  <groupId>com.debi</groupId>
+  <!-- The artifact ID is the name of the jar without the version -->
+  <artifactId>social-media-app</artifactId>
+  <!-- The version number for this build -->
+  <version>1.0-SNAPSHOT</version>
+  <!-- A human-readable name for the project -->
+  <name>social-media-app</name>
+
+  <properties>
+    <!-- Set the encoding used during the build process -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- Centralized JUnit version -->
+    <junit.version>5.10.0</junit.version>
+  </properties>
+
+  <dependencies>
+    <!-- JavaFX controls library for UI elements like buttons, labels, etc. -->
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-controls</artifactId>
+      <version>22-ea+11</version>
+    </dependency>
+
+    <!-- JavaFX FXML library for loading UI layouts defined in FXML -->
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-fxml</artifactId>
+      <version>22-ea+11</version>
+    </dependency>
+
+    <!-- MySQL JDBC driver for database connectivity -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.21</version>
+    </dependency>
+
+    <!-- Hibernate ORM library for managing database interactions with JPA -->
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>5.4.10.Final</version>
+    </dependency>
+
+    <!-- Lombok library for reducing boilerplate code (e.g., getters, setters) -->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.36</version>
+      <scope>provided</scope> <!-- Only needed during compilation -->
+    </dependency>
+
+    <!-- Hibernate C3P0 connection pooling library -->
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-c3p0</artifactId>
+      <version>5.4.10.Final</version>
+    </dependency>
+
+    <!-- Liquibase library for managing database schema migrations -->
+    <dependency>
+      <groupId>org.liquibase</groupId>
+      <artifactId>liquibase-core</artifactId>
+      <version>4.23.2</version>
+    </dependency>
+
+    <!-- FormsFX library for creating form-based UI components -->
+    <dependency>
+      <groupId>com.dlsc.formsfx</groupId>
+      <artifactId>formsfx-core</artifactId>
+      <version>11.6.0</version>
+      <exclusions>
+        <!-- Exclude JavaFX dependencies included by FormsFX to avoid conflicts -->
+        <exclusion>
+          <groupId>org.openjfx</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <!-- JUnit API for writing unit tests -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope> <!-- Only used for testing -->
+    </dependency>
+
+    <!-- JUnit Engine for executing unit tests -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope> <!-- Only used for testing -->
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <!-- Maven Compiler Plugin to set the Java source and target versions -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.11.0</version>
+        <configuration>
+          <source>22</source> <!-- Java source version -->
+          <target>22</target> <!-- Java target version -->
+        </configuration>
+      </plugin>
+
+      <!-- Liquibase Maven Plugin for running database migrations -->
+      <plugin>
+        <groupId>org.liquibase</groupId>
+        <artifactId>liquibase-maven-plugin</artifactId>
+        <version>4.23.2</version>
+        <configuration>
+          <propertyFile>src/main/resources/liquibase.properties</propertyFile> <!-- Path to Liquibase configuration -->
+        </configuration>
+      </plugin>
+
+      <!-- JavaFX Maven Plugin for packaging and running JavaFX applications -->
+      <plugin>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-maven-plugin</artifactId>
+        <version>0.0.8</version>
+        <executions>
+          <execution>
+            <!-- Default configuration for running the JavaFX application -->
+            <id>default-cli</id>
+            <configuration>
+              <mainClass>com.debi.socialmediaapp/com.debi.socialmediaapp.HelloApplication</mainClass> <!-- Main application entry point -->
+              <launcher>app</launcher> <!-- Name of the launcher -->
+              <jlinkZipName>app</jlinkZipName> <!-- Name of the packaged ZIP file -->
+              <jlinkImageName>app</jlinkImageName> <!-- Name of the runtime image -->
+              <noManPages>true</noManPages> <!-- Exclude manual pages to reduce size -->
+              <stripDebug>true</stripDebug> <!-- Strip debug symbols to reduce size -->
+              <noHeaderFiles>true</noHeaderFiles> <!-- Exclude header files to reduce size -->
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
