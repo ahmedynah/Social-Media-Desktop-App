@@ -1,6 +1,6 @@
 package com.debi.socialmediaapp.repositories;
 
-import com.debi.socialmediaapp.models.Users;
+import com.debi.socialmediaapp.models.User;
 import com.debi.socialmediaapp.utils.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -21,13 +21,13 @@ public class UserRepository {
      * Saves or updates a user in the database.
      * If the user already exists, it will be updated; otherwise, a new record will be created.
      *
-     * @param users the Users entity to be saved or updated
+     * @param user the Users entity to be saved or updated
      */
-    public void saveUser(Users users) {
+    public void saveUser(User user) {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             transaction = session.beginTransaction(); // Start a transaction
-            session.saveOrUpdate(users); // Save or update the user
+            session.saveOrUpdate(user); // Save or update the user
             transaction.commit(); // Commit the transaction
         } catch (Exception e) {
             if (transaction != null) {
@@ -43,9 +43,9 @@ public class UserRepository {
      * @param id the ID of the user to be fetched
      * @return the Users entity if found, or null if no user exists with the given ID
      */
-    public Users getUserById(Long id) {
+    public User getUserById(Long id) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            return session.get(Users.class, id); // Fetch a user by its ID
+            return session.get(User.class, id); // Fetch a user by its ID
         } catch (Exception e) {
             e.printStackTrace(); // Print the stack trace for debugging purposes
             return null; // Return null in case of an error
@@ -57,9 +57,9 @@ public class UserRepository {
      *
      * @return a list of all Users entities, or null if an error occurs
      */
-    public List<Users> getAllUsers() {
+    public List<User> getAllUsers() {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            return session.createQuery("from Users", Users.class).getResultList(); // Fetch all users
+            return session.createQuery("from Users", User.class).getResultList(); // Fetch all users
         } catch (Exception e) {
             e.printStackTrace(); // Print the stack trace for debugging purposes
             return null; // Return null in case of an error
@@ -75,9 +75,9 @@ public class UserRepository {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             transaction = session.beginTransaction(); // Start a transaction
-            Users users = session.get(Users.class, id); // Fetch the user by ID
-            if (users != null) {
-                session.delete(users); // Delete the user if it exists
+            User user = session.get(User.class, id); // Fetch the user by ID
+            if (user != null) {
+                session.delete(user); // Delete the user if it exists
             }
             transaction.commit(); // Commit the transaction
         } catch (Exception e) {

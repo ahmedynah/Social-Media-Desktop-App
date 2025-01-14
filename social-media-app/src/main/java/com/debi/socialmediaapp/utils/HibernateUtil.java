@@ -1,6 +1,7 @@
 package com.debi.socialmediaapp.utils;
 
-import com.debi.socialmediaapp.models.Users;
+import com.debi.socialmediaapp.models.User;
+import lombok.Getter;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -21,16 +22,8 @@ public class HibernateUtil {
      * Singleton SessionFactory instance for the application.
      * It is initialized once during the application lifecycle.
      */
+    @Getter
     private static final SessionFactory sessionFactory;
-
-    /**
-     * Provides access to the SessionFactory instance.
-     *
-     * @return the singleton SessionFactory instance
-     */
-    public static SessionFactory getSessionFactory() {
-        return sessionFactory;
-    }
 
     // Static initializer block for configuring Hibernate SessionFactory
     static {
@@ -40,7 +33,7 @@ public class HibernateUtil {
             configuration.addProperties(configuration.getProperties());
 
             // Add all annotated entity classes
-            configuration.addAnnotatedClass(Users.class);
+            configuration.addAnnotatedClass(User.class);
 
             // Alternatively, scan a package containing entities
             configuration.addPackage("com.debi.socialmediaapp.models");

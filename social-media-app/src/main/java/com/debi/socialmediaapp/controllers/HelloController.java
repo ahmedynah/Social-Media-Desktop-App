@@ -1,5 +1,6 @@
 package com.debi.socialmediaapp.controllers;
 
+import com.debi.socialmediaapp.models.User;
 import com.debi.socialmediaapp.repositories.UserRepository;
 import com.debi.socialmediaapp.utils.HibernateUtil;
 import javafx.fxml.FXML;
@@ -25,5 +26,9 @@ public class HelloController {
         boolean isConnected = HibernateUtil.testConnection();
         System.out.println("Database connection successful: " + isConnected);
         System.out.println(userRepository.getUserById(1L));
+        User user1 = new User();
+        user1.setUsername("7amasa");
+        user1.setPassword("123456");
+        userRepository.saveUser(user1);
     }
 }

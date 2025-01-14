@@ -19,7 +19,7 @@ import javax.persistence.*;
 @NoArgsConstructor // Generates a no-argument constructor
 @AllArgsConstructor // Generates an all-argument constructor
 @Table(name = "USERS") // Maps this class to the USERS table in the database
-public class Users {
+public class User {
 
     /**
      * Primary key for the USERS table.
