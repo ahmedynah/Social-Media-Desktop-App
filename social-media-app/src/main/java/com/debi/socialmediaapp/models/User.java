@@ -27,14 +27,28 @@ public class User {
      */
     @Id // Marks this field as the primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Specifies the primary key generation strategy
-    @Column(name = "ID") // Maps this field to the ID column in the USERS table
+    @Column(name = "id") // Maps this field to the ID column in the USERS table
     private long id;
 
     /**
-     * Column representing the username of the user.
+     * Column representing the first_name of the user.
      */
-    @Column(name = "USERNAME") // Maps this field to the USERNAME column in the USERS table
-    private String username;
+    @Column(name = "first_name") // Maps this field to the USERNAME column in the USERS table
+    private String firstName;
+
+
+    /**
+     * Column representing the last_name of the user.
+     */
+    @Column(name = "last_name") // Maps this field to the USERNAME column in the USERS table
+    private String lastName;
+
+    /**
+     * Column representing the email of the user.
+     */
+    @Column(name = "email") // Maps this field to the USERNAME column in the USERS table
+    private String email;
+
 
     /**
      * Column representing the password of the user.
