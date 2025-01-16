@@ -19,7 +19,12 @@ public class Profile {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Specifies the primary key generation strategy
     @Column(name = "id") // Maps this field to the ID column in the PROFILES table
     private long id;
-
+    // A constructor that takes everything except the id
+    public Profile(String bio, byte[] personalPhoto, User user) {
+        this.bio = bio;
+        this.personalPhoto = personalPhoto;
+        this.user = user;
+    }
     /**
      * Column representing the bio of the profile.
      */

@@ -34,7 +34,10 @@ public class PostImageRepositoryTest {
 
         // Step 1: Create and save a User
         User user = new User();
-        user.setEmail("sampleUser@xyz.com"); // Set user details
+        user.setEmail("sampleUser@xyz.com");
+        user.setFirstName("first");
+        user.setLastName("last");// Set user details
+        user.setPassword("123456");
         userRepository.saveUser(user); // Save the User entity in the database
 
         // Step 2: Create and save a Post associated with the User

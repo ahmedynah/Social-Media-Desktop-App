@@ -2,6 +2,7 @@ package com.debi.socialmediaapp.utils;
 
 import com.debi.socialmediaapp.models.Post;
 import com.debi.socialmediaapp.models.PostImage;
+import com.debi.socialmediaapp.models.Profile;
 import com.debi.socialmediaapp.models.User;
 import lombok.Getter;
 import org.hibernate.Session;
@@ -36,6 +37,7 @@ public class HibernateUtil {
 
             // Add all annotated entity classes
             configuration.addAnnotatedClass(User.class);
+            configuration.addAnnotatedClass(Profile.class);
             configuration.addAnnotatedClass(Post.class);
             configuration.addAnnotatedClass(PostImage.class);
 
