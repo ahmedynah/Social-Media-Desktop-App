@@ -5,8 +5,6 @@ import com.debi.socialmediaapp.utils.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
@@ -19,7 +17,7 @@ public class ProfileRepository {
      * @param profile the Profile entity to be saved or updated
      */
     public void saveProfile(Profile profile) {
-        EntityTransaction transaction = null;
+        Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             transaction = session.beginTransaction(); // Start a transaction
             session.saveOrUpdate(profile); // Save or update the profile
@@ -85,7 +83,7 @@ public class ProfileRepository {
      * @param id the ID of the profile to be deleted
      */
     public void deleteProfile(Long id) {
-        EntityTransaction transaction = null;
+        Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             transaction = session.beginTransaction(); // Start a transaction
             Profile profile = session.get(Profile.class, id); // Fetch the profile by ID
@@ -98,6 +96,42 @@ public class ProfileRepository {
                 transaction.rollback(); // Roll back the transaction in case of an error
             }
             e.printStackTrace(); // Print the stack trace for debugging purposes
+        }
+    }
+
+    /**
+     * Retrieves the bio of a profile by its associated user ID.
+     *
+     * @param userId the user ID associated with the profile
+     * @return the bio of the profile if found, or null if no profile exists for the given user ID
+     */
+    public String getBioByUserId(Long userId) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            String query = "SELECT p.bio FROM Profile p WHERE p.user.id = :userId";
+            return session.createQuery(query, String.class)
+                    .setParameter("userId", userId)
+                    .uniqueResult(); // Fetch the bio by user ID
+        } catch (Exception e) {
+            e.printStackTrace(); // Print the stack trace for debugging purposes
+            return null; // Return null in case of an error
+        }
+    }
+
+    /**
+     * Retrieves the profile picture of a profile by its associated user ID.
+     *
+     * @param userId the user ID associated with the profile
+     * @return the profile picture (as byte[]) if found, or null if no profile exists for the given user ID
+     */
+    public byte[] getProfilePictureByUserId(Long userId) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            String query = "SELECT p.personalPhoto FROM Profile p WHERE p.user.id = :userId";
+            return session.createQuery(query, byte[].class)
+                    .setParameter("userId", userId)
+                    .uniqueResult(); // Fetch the profile picture by user ID
+        } catch (Exception e) {
+            e.printStackTrace(); // Print the stack trace for debugging purposes
+            return null; // Return null in case of an error
         }
     }
 }
