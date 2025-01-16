@@ -25,32 +25,46 @@ public class ProfileController {
     private Label bioText;
 
     @FXML
+    private Label firstNameLabel;
+
+    @FXML
+    private Label lastNameLabel;
+
+    @FXML
+    private Label emailLabel;
+
+    @FXML
     private Button editProfileButton;
 
     ProfileRepository repository = new ProfileRepository();
 
     @FXML
     public void initialize() {
+        // Get the logged-in user from the singleton
         User loggedInUser = LoggedInUser.getInstance().getUser();
-        long userId = 1L;
         if (loggedInUser != null) {
-            userId = loggedInUser.getId();
-            // Use the logged-in user's ID here
-        }
+            // Set the first name, last name, and email
+            firstNameLabel.setText("First Name: " + loggedInUser.getFirstName());
+            lastNameLabel.setText("Last Name: " + loggedInUser.getLastName());
+            emailLabel.setText("Email: " + loggedInUser.getEmail());
 
-        String userBio = repository.getBioByUserId(userId);
-        byte[] imageBytes = repository.getProfilePictureByUserId(userId);
+            long userId = loggedInUser.getId();
 
-        // Set the bio text
-        bioText.setText(userBio != null ? userBio : "No bio available");
+            // Fetch bio and profile picture
+            String userBio = repository.getBioByUserId(userId);
+            byte[] imageBytes = repository.getProfilePictureByUserId(userId);
 
-        // Convert the byte[] to an Image and set it in the ImageView
-        if (imageBytes != null) {
-            Image image = new Image(new ByteArrayInputStream(imageBytes));
-            profilePicture.setImage(image);
-        } else {
-            // Optionally set a default image if the profile picture is missing
-            profilePicture.setImage(new Image("https://dummyimage.com/150x150/cccccc/000000"));
+            // Set the bio text
+            bioText.setText(userBio != null ? userBio : "No bio available");
+
+            // Set profile picture
+            if (imageBytes != null) {
+                Image image = new Image(new ByteArrayInputStream(imageBytes));
+                profilePicture.setImage(image);
+            } else {
+                // Optionally set a default image if the profile picture is missing
+                profilePicture.setImage(new Image("https://placehold.co/150"));
+            }
         }
     }
 
@@ -58,8 +72,7 @@ public class ProfileController {
     private void onEditProfileButtonClick() {
         try {
             // Load the FXML for the Edit Profile window
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/debi/socialmediaapp/EditProfile.fxml"
-            ));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/debi/socialmediaapp/EditProfile.fxml"));
             Scene scene = new Scene(loader.load());
 
             // Set up the stage

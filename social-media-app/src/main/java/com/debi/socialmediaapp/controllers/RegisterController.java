@@ -41,7 +41,7 @@ public class RegisterController {
                 PasswordUtil.hashPassword(password.getText())
         );
         byte[] defaultImage = ProfileHelper.getDefaultImageBytes();
-        Profile profile = new Profile("No Bio Yet.", defaultImage, user);
+        Profile profile = new Profile("No bio yet.", defaultImage, user);
         userRepository.saveUser(user);
         profileRepository.saveProfile(profile);
         GeneralUtil.showSuccessAlert("your account has bees registered successfully");
