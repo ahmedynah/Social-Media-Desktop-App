@@ -58,6 +58,34 @@ public class ProfileRepository {
             return null; // Return null in case of an error
         }
     }
+    /**
+     * Updates the bio of a profile by its associated user ID.
+     *
+     * @param userId the user ID associated with the profile to be updated
+     * @param bio the new bio to set for the profile
+     */
+    public void updateBioByUserId(Long userId, String bio) {
+        Transaction transaction = null;
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            transaction = session.beginTransaction(); // Start a transaction
+
+            String query = "UPDATE Profile p SET p.bio = :bio WHERE p.user.id = :userId";
+            int updatedRows = session.createQuery(query)
+                    .setParameter("bio", bio)
+                    .setParameter("userId", userId)
+                    .executeUpdate(); // Execute the update query
+
+            transaction.commit(); // Commit the transaction
+            if (updatedRows == 0) {
+                System.out.println("No profile found for the given user ID.");
+            }
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback(); // Roll back the transaction in case of an error
+            }
+            e.printStackTrace(); // Print the stack trace for debugging purposes
+        }
+    }
 
     /**
      * Retrieves a profile by its associated user ID.

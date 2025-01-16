@@ -1,6 +1,7 @@
 package com.debi.socialmediaapp.controllers;
 
 import com.debi.socialmediaapp.models.Profile;
+import com.debi.socialmediaapp.repositories.ProfileRepository;
 import com.debi.socialmediaapp.repositories.UserRepository;
 import com.debi.socialmediaapp.models.User;
 import com.debi.socialmediaapp.utils.GeneralUtil;
@@ -16,7 +17,7 @@ import com.debi.socialmediaapp.utils.PasswordUtil;
 public class RegisterController {
 
     UserRepository userRepository = new UserRepository();
-
+    ProfileRepository profileRepository = new ProfileRepository();
     @FXML
     private TextField firstName;
     @FXML
@@ -42,6 +43,7 @@ public class RegisterController {
         byte[] defaultImage = ProfileHelper.getDefaultImageBytes();
         Profile profile = new Profile("No Bio Yet.", defaultImage, user);
         userRepository.saveUser(user);
+        profileRepository.saveProfile(profile);
         GeneralUtil.showSuccessAlert("your account has bees registered successfully");
         redirectToLoginPage();
     }

@@ -1,5 +1,6 @@
 package com.debi.socialmediaapp.controllers;
 
+import com.debi.socialmediaapp.DTOs.LoggedInUser;
 import com.debi.socialmediaapp.repositories.UserRepository;
 import com.debi.socialmediaapp.models.User;
 import com.debi.socialmediaapp.utils.PasswordUtil;
@@ -23,6 +24,8 @@ public class LoginController {
         if (!validateFields())
             return;
         User user = userRepository.getUserByEmail(email.getText());
+        // Set the logged-in user in the singleton
+        LoggedInUser.getInstance().setUser(user);
         if (!(user != null && PasswordUtil.verifyPassword(password.getText(), user.getPassword()))) {
             GeneralUtil.showErrorAlert("invalid credentials");
             return;
