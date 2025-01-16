@@ -23,9 +23,10 @@ public class LoginController {
         if (!validateFields())
             return;
         User user = userRepository.getUserByEmail(email.getText());
-        if (!(user != null && PasswordUtil.verifyPassword(password.getText(), user.getPassword())))
+        if (!(user != null && PasswordUtil.verifyPassword(password.getText(), user.getPassword()))) {
             GeneralUtil.showErrorAlert("invalid credentials");
-
+            return;
+        }
         GeneralUtil.redirectToView("profile-view", email);
     }
 

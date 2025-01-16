@@ -5,22 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39bf0214-193e-4d7e-921a-ce055c402bb3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Social-Media-Desktop-App.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Social-Media-Desktop-App.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-media-app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/social-media-app/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-media-app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/social-media-app/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-media-app/src/main/java/com/debi/socialmediaapp/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/social-media-app/src/main/java/com/debi/socialmediaapp/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-media-app/src/main/java/com/debi/socialmediaapp/controllers/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/social-media-app/src/main/java/com/debi/socialmediaapp/controllers/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/social-media-app/src/main/java/com/debi/socialmediaapp/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/social-media-app/src/main/java/com/debi/socialmediaapp/controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-media-app/src/main/java/com/debi/socialmediaapp/controllers/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/social-media-app/src/main/java/com/debi/socialmediaapp/controllers/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-media-app/src/main/java/com/debi/socialmediaapp/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/social-media-app/src/main/java/com/debi/socialmediaapp/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-media-app/src/main/java/com/debi/socialmediaapp/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/social-media-app/src/main/java/com/debi/socialmediaapp/repositories/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-media-app/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/social-media-app/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-media-app/src/main/resources/com/debi/socialmediaapp/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/social-media-app/src/main/resources/com/debi/socialmediaapp/login-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-media-app/src/main/resources/com/debi/socialmediaapp/register-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/social-media-app/src/main/resources/com/debi/socialmediaapp/register-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social-media-app/src/main/resources/liquibase.properties" beforeDir="false" afterPath="$PROJECT_DIR$/social-media-app/src/main/resources/liquibase.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
