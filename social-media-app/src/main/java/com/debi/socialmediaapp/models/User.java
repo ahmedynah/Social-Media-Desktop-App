@@ -1,10 +1,11 @@
 package com.debi.socialmediaapp.models;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Entity class representing the USERS table in the database.
@@ -17,8 +18,7 @@ import javax.persistence.*;
 @Data // Lombok annotation to generate getters, setters, equals, hashCode, and toString methods
 @Entity // Marks this class as a JPA entity
 @NoArgsConstructor // Generates a no-argument constructor
-@AllArgsConstructor // Generates an all-argument constructor
-@Table(name = "users") // Maps this class to the USERS table in the database
+@Table(name = "Users") // Maps this class to the USERS table in the database
 public class User {
 
     /**
@@ -28,7 +28,7 @@ public class User {
     @Id // Marks this field as the primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Specifies the primary key generation strategy
     @Column(name = "id") // Maps this field to the ID column in the USERS table
-    private long id;
+    private Long id;
 
     /**
      * Column representing the first_name of the user.
@@ -55,6 +55,19 @@ public class User {
      */
     @Column(name = "PASSWORD") // Maps this field to the PASSWORD column in the USERS table
     private String password;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Post> posts = new ArrayList<>();
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
+    }
 
 
     public User(String firstName, String lastName, String email, String password) {
