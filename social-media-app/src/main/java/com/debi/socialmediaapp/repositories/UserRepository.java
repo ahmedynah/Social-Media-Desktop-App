@@ -53,6 +53,23 @@ public class UserRepository {
     }
 
     /**
+     * Retrieves a user from the database by its email.
+     *
+     * @param email the email of the user to be fetched
+     * @return the Users entity if found, or null if no user exists with the given email
+     */
+    public User getUserByEmail(String email) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            return session.createQuery("from User where email = :email", User.class)
+                    .setParameter("email", email)
+                    .uniqueResult();
+        } catch (Exception e) {
+            e.printStackTrace(); // Print the stack trace for debugging purposes
+            return null;
+        }
+    }
+
+    /**
      * Retrieves all users from the database.
      *
      * @return a list of all Users entities, or null if an error occurs

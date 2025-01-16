@@ -18,7 +18,7 @@ import javax.persistence.*;
 @Entity // Marks this class as a JPA entity
 @NoArgsConstructor // Generates a no-argument constructor
 @AllArgsConstructor // Generates an all-argument constructor
-@Table(name = "USERS") // Maps this class to the USERS table in the database
+@Table(name = "users") // Maps this class to the USERS table in the database
 public class User {
 
     /**
@@ -55,4 +55,13 @@ public class User {
      */
     @Column(name = "PASSWORD") // Maps this field to the PASSWORD column in the USERS table
     private String password;
+
+
+    public User(String firstName, String lastName, String email, String password) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+    }
+
 }

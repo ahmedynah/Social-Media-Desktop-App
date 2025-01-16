@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="39bf0214-193e-4d7e-921a-ce055c402bb3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Social-Media-Desktop-App.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Social-Media-Desktop-App.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-media-app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/social-media-app/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-media-app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/social-media-app/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-media-app/src/main/java/com/debi/socialmediaapp/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/social-media-app/src/main/java/com/debi/socialmediaapp/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-media-app/src/main/java/com/debi/socialmediaapp/controllers/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/social-media-app/src/main/java/com/debi/socialmediaapp/controllers/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-media-app/src/main/java/com/debi/socialmediaapp/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/social-media-app/src/main/java/com/debi/socialmediaapp/controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-media-app/src/main/java/com/debi/socialmediaapp/controllers/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/social-media-app/src/main/java/com/debi/socialmediaapp/controllers/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-media-app/src/main/java/com/debi/socialmediaapp/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/social-media-app/src/main/java/com/debi/socialmediaapp/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-media-app/src/main/java/com/debi/socialmediaapp/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/social-media-app/src/main/java/com/debi/socialmediaapp/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-media-app/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/social-media-app/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-media-app/src/main/resources/com/debi/socialmediaapp/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/social-media-app/src/main/resources/com/debi/socialmediaapp/login-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-media-app/src/main/resources/com/debi/socialmediaapp/register-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/social-media-app/src/main/resources/com/debi/socialmediaapp/register-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social-media-app/src/main/resources/liquibase.properties" beforeDir="false" afterPath="$PROJECT_DIR$/social-media-app/src/main/resources/liquibase.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="2riFsnFmRcICiF511ir9gNs1FpM" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Application.executor": "Run",
+    "Application.HelloApplication.executor": "Run",
+    "Maven.database update.executor": "Run",
+    "Maven.social-media-app [clean].executor": "Run",
+    "Maven.social-media-app [compile].executor": "Run",
+    "Maven.social-media-app [validate].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "env/dev",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/muhze/Desktop/Java/Social-Media-Desktop-App/social-media-app/src/main/resources/com/debi/socialmediaapp",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.57816094",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\muhze\Desktop\Java\Social-Media-Desktop-App\social-media-app\src\main\resources\com\debi\socialmediaapp" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.debi.socialmediaapp.utils" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Application">
+    <configuration name="Application" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.debi.socialmediaapp.HelloApplication" />
+      <module name="social-media-app" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="database update" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="liquibase:update" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/social-media-app" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.Application" />
+      <item itemvalue="Maven.database update" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="39bf0214-193e-4d7e-921a-ce055c402bb3" name="Changes" comment="" />
+      <created>1737034201797</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1737034201797</updated>
+    </task>
+    <servers />
+  </component>
+</project>

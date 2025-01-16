@@ -15,7 +15,8 @@ module com.debi.socialmediaapp {
     requires com.dlsc.formsfx; // A library for creating form-based UI components
     requires java.desktop; // Provides AWT and Swing APIs, which might be used for desktop utilities
     requires java.persistence; // Includes annotations and interfaces for JPA (Java Persistence API)
-    requires org.hibernate.orm.core; // The Hibernate ORM framework for object-relational mapping and persistence
+    requires org.hibernate.orm.core;
+    requires spring.security.crypto; // The Hibernate ORM framework for object-relational mapping and persistence
 
     // Specifies packages that can be accessed by other modules or frameworks
 
