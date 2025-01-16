@@ -59,7 +59,7 @@ public class UserRepository {
      */
     public List<User> getAllUsers() {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            return session.createQuery("from Users", User.class).getResultList(); // Fetch all users
+            return session.createQuery("from User", User.class).getResultList(); // Fetch all users
         } catch (Exception e) {
             e.printStackTrace(); // Print the stack trace for debugging purposes
             return null; // Return null in case of an error
