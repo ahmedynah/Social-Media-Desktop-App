@@ -18,7 +18,7 @@ import java.util.List;
 @Data // Lombok annotation to generate getters, setters, equals, hashCode, and toString methods
 @Entity // Marks this class as a JPA entity
 @NoArgsConstructor // Generates a no-argument constructor
-@Table(name = "Users") // Maps this class to the USERS table in the database
+@Table(name = "users") // Maps this class to the USERS table in the database
 public class User {
 
     /**

@@ -9,3 +9,9 @@ databaseChangeLog:
       file: db/changelog/changeset-004.sql
   - include:
       file: db/changelog/changeset-005.sql
+  - include:
+      file: db/changelog/changeset-006.sql
+  - include:
+      file: db/changelog/changeset-007.sql
+  - include:
+      file: db/changelog/changeset-008.sql

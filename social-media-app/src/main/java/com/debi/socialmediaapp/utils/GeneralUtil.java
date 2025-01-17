@@ -20,14 +20,14 @@ import java.io.IOException;
 public class GeneralUtil {
     public static void redirectToView(String viewName, Node element) {
         try {
+            System.out.println("in the last step");
             FXMLLoader loader = new FXMLLoader(GeneralUtil.class.getResource("/fxml/" + viewName + ".fxml"));
             Parent root = loader.load();
-
             Stage stage = (Stage) element.getScene().getWindow();
-
             stage.setScene(new Scene(root));
+
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            System.out.println(e.getCause());
         }
     }
 
