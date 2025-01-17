@@ -126,6 +126,29 @@ public class ProfileRepository {
             e.printStackTrace(); // Print the stack trace for debugging purposes
         }
     }
+    public void saveProfilePictureByUserId(Long userId, byte[] profilePicture) {
+        Transaction transaction = null;
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            transaction = session.beginTransaction(); // Start a transaction
+
+            String query = "UPDATE Profile p SET p.personalPhoto = :profilePicture WHERE p.user.id = :userId";
+            int updatedRows = session.createQuery(query)
+                    .setParameter("profilePicture", profilePicture)
+                    .setParameter("userId", userId)
+                    .executeUpdate(); // Execute the update query
+
+            transaction.commit(); // Commit the transaction
+            if (updatedRows == 0) {
+                System.out.println("No profile found for the given user ID.");
+            }
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback(); // Roll back the transaction in case of an error
+            }
+            e.printStackTrace(); // Print the stack trace for debugging purposes
+        }
+    }
+
 
     /**
      * Retrieves the bio of a profile by its associated user ID.
