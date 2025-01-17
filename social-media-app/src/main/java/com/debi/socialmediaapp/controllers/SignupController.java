@@ -4,10 +4,15 @@ import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import lombok.Getter;
+import lombok.Setter;
 
 
-// com.debi.socialmediaapp.controllers.SignupController.java
 public class SignupController {
+    @Setter
+    @Getter
+    AuthContainerController authContainerController;
+
     @FXML
     private TextField signupName;
     @FXML
@@ -28,9 +33,9 @@ public class SignupController {
 
     @FXML
     private void handleBackToLogin() {
-        // Get parent controller and trigger form switch
+
+//         Get parent controller and trigger form switch
         Node node = signupName.getScene().getRoot();
-        AuthContainerController controller = (AuthContainerController) node.getUserData();
-        controller.toggleAuthForm();
+        authContainerController.toggleAuthForm();
     }
 }

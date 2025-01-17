@@ -7,6 +7,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
@@ -14,8 +15,14 @@ import javafx.util.Duration;
 import java.io.IOException;
 
 public class AuthContainerController {
+    @FXML
+    public HBox authContainer;
+
     @FXML private VBox formPanel;
     @FXML private VBox promoPanel;
+
+    @FXML
+    private SignupController signupController; // Injected Inner Controller
 
     private Node loginForm;
     private Node signupForm;
@@ -24,9 +31,13 @@ public class AuthContainerController {
     @FXML
     public void initialize() {
         try {
+            FXMLLoader signUpLoader = new FXMLLoader(getClass().getResource("/fxml/signup-form.fxml"));
+
             // Load both forms
-            loginForm = FXMLLoader.load(getClass().getResource("login-form.fxml"));
-            signupForm = FXMLLoader.load(getClass().getResource("signup-form.fxml"));
+            loginForm = FXMLLoader.load(getClass().getResource("/fxml/login-form.fxml"));
+            signupForm = signUpLoader.load();
+            SignupController signUpController = signUpLoader.getController();
+            signUpController.setAuthContainerController(this);
 
 
             // Set initial alignment and position constraints for both forms
@@ -67,8 +78,8 @@ public class AuthContainerController {
         nextForm.setOpacity(0.0);
 
         // Ensure both forms have the same layout bounds
-        nextForm.layoutXProperty().bind(currentForm.layoutXProperty());
-        nextForm.layoutYProperty().bind(currentForm.layoutYProperty());
+//        nextForm.layoutXProperty().bind(currentForm.layoutXProperty());
+//        nextForm.layoutYProperty().bind(currentForm.layoutYProperty());
 
         // Create fade out transition for current form
         FadeTransition fadeOut = new FadeTransition(Duration.millis(300), currentForm);

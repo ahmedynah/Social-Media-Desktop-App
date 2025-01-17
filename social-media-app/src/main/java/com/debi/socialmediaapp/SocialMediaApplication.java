@@ -14,10 +14,11 @@ public class SocialMediaApplication extends Application {
     public void start(Stage stage) throws IOException {
         Image icon = new Image(Objects.requireNonNull(SocialMediaApplication.class.getResourceAsStream("/imgs/social-contact-svgrepo-com.png")));
 
-        FXMLLoader fxmlLoader = new FXMLLoader(SocialMediaApplication.class.getResource("/fxml/login-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(SocialMediaApplication.class.getResource("/fxml/main-auth-container.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 500);
         stage.setTitle("Social Media App");
         stage.getIcons().add(icon);
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
     }
