@@ -30,7 +30,7 @@ public class UserRepository {
             session.saveOrUpdate(user); // Save or update the user
             transaction.commit(); // Commit the transaction
         } catch (Exception e) {
-            if (transaction != null) {
+            if (transaction != null && transaction.isActive()) {
                 transaction.rollback(); // Roll back the transaction in case of an error
             }
             e.printStackTrace(); // Print the stack trace for debugging purposes

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<StackPane styleClass="main-container" stylesheets="@../css/modern-login-styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.debi.socialmediaapp.controllers.AuthContainerController">
+
+    <HBox fx:id="authContainer" styleClass="auth-container">
+        <!-- Left Panel - Promo Panel -->
+        <VBox fx:id="promoPanel" styleClass="promo-panel">
+            <Label styleClass="promo-title" text="New Here?" />
+            <Label styleClass="promo-text" text="Sign up and discover great opportunities!" />
+            <Button onAction="#toggleAuthForm" styleClass="promo-button" text="SIGN UP" />
+        </VBox>
+
+        <!-- Right Panel - Dynamic Form Container -->
+        <VBox fx:id="formPanel" style="-fx-background-color: red;" styleClass="form-panel">
+            <!-- Forms will be loaded here dynamically -->
+        </VBox>
+    </HBox>
+</StackPane>

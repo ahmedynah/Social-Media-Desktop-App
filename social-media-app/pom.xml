@@ -62,6 +62,17 @@
       <scope>provided</scope> <!-- Only needed during compilation -->
     </dependency>
 
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-graphics</artifactId>
+      <version>22</version>
+    </dependency>
+    <dependency>
+      <groupId>com.jfoenix</groupId>
+      <artifactId>jfoenix</artifactId>
+      <version>9.0.10</version>
+    </dependency>
+
     <!-- Hibernate C3P0 connection pooling library -->
     <dependency>
       <groupId>org.hibernate</groupId>
@@ -161,7 +172,7 @@
             <!-- Default configuration for running the JavaFX application -->
             <id>default-cli</id>
             <configuration>
-              <mainClass>com.debi.socialmediaapp/com.debi.socialmediaapp.HelloApplication</mainClass> <!-- Main application entry point -->
+              <mainClass>com.debi.socialmediaapp/com.debi.socialmediaapp.SocialMediaApplication</mainClass> <!-- Main application entry point -->
               <launcher>app</launcher> <!-- Name of the launcher -->
               <jlinkZipName>app</jlinkZipName> <!-- Name of the packaged ZIP file -->
               <jlinkImageName>app</jlinkImageName> <!-- Name of the runtime image -->

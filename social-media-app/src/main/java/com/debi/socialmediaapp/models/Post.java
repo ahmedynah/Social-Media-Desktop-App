@@ -35,6 +35,18 @@ public class Post {
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<PostImage> images = new ArrayList<>();
 
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<PostImage> postImages = new ArrayList<>();
+
+    public void addPostImage(PostImage postImage) {
+        postImages.add(postImage);
+        postImage.setPost(this);
+    }
+
+    public void removePostImage(PostImage postImage) {
+        postImages.remove(postImage);
+    }
+
     @Override
     public String toString() {
         return "Post{" +

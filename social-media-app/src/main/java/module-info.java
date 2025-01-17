@@ -3,6 +3,8 @@ module com.debi.socialmediaapp {
     // Requires JavaFX modules for building GUI applications
     requires javafx.controls; // Provides JavaFX UI controls such as buttons, labels, etc.
     requires javafx.fxml; // Enables the use of FXML files for defining the UI layout
+    requires javafx.graphics;
+    requires com.jfoenix; // JFoenix module for Material Design components.
 
     // Lombok library for generating boilerplate code (e.g., getters, setters) at compile time
     requires static lombok; // Marked as static because it is only needed during compilation, not runtime

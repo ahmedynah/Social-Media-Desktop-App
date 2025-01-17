@@ -1,0 +1,73 @@
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* Apply font globally */
+.root {
+    -fx-background-color: #f4f4f9;
+    -fx-font-family: 'Roboto', sans-serif;
+    -fx-font-size: 14px;
+}
+
+/* Image View Styling */
+.image-view {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 10, 0, 2, 2);
+    -fx-border-color: #ccc;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px;
+    -fx-background-color: white;
+}
+
+
+/* Profile Button (Top Right Corner) */
+.profile-btn {
+    -fx-background-color: transparent;
+    -fx-border-radius: 50%;
+    -fx-padding: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 0, 0);
+    cursor: pointer;
+}
+
+/* FontAwesome Icon */
+.fa-icon {
+    -fx-fill: #4CAF50; /* Icon color */
+}
+
+/* Title Label */
+.title-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+    -fx-alignment: center;
+}
+
+/* Post Text Area */
+.post-text-area {
+    -fx-background-color: #ffffff;
+    -fx-border-radius: 8px;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 1px;
+    -fx-padding: 10px;
+    -fx-font-size: 16px;
+}
+
+/* Buttons */
+.upload-btn, .submit-btn {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-radius: 5px;
+    -fx-pref-width: 150px;
+    -fx-pref-height: 40px;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0, 0, 1);
+}
+
+.upload-btn:hover, .submit-btn:hover {
+    -fx-background-color: #45a049;
+}
+
+.upload-btn:pressed, .submit-btn:pressed {
+    -fx-background-color: #388e3c;
+}

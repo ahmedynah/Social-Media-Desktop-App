@@ -2,6 +2,7 @@ package com.debi.socialmediaapp.controllers;
 
 import com.debi.socialmediaapp.DTOs.LoggedInUser;
 import com.debi.socialmediaapp.models.User;
+import com.debi.socialmediaapp.repositories.ProfileRepository;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -9,14 +10,17 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import com.debi.socialmediaapp.repositories.ProfileRepository;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 
 public class ProfileController {
+
+    @FXML
+    public VBox statusInputView;
 
     @FXML
     private ImageView profilePicture;
@@ -72,7 +76,7 @@ public class ProfileController {
     private void onEditProfileButtonClick() {
         try {
             // Load the FXML for the Edit Profile window
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/debi/socialmediaapp/EditProfile.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/edit-profile.fxml"));
             Scene scene = new Scene(loader.load());
 
             // Set up the stage

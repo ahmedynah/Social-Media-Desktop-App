@@ -1,7 +1,9 @@
 package com.debi.socialmediaapp.models;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
 @Data // Lombok annotation to generate getters, setters, equals, hashCode, and toString methods
@@ -19,12 +21,7 @@ public class Profile {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Specifies the primary key generation strategy
     @Column(name = "id") // Maps this field to the ID column in the PROFILES table
     private long id;
-    // A constructor that takes everything except the id
-    public Profile(String bio, byte[] personalPhoto, User user) {
-        this.bio = bio;
-        this.personalPhoto = personalPhoto;
-        this.user = user;
-    }
+
     /**
      * Column representing the bio of the profile.
      */
@@ -47,5 +44,12 @@ public class Profile {
     @JoinColumn(name = "user_id", referencedColumnName = "id", unique = true, nullable = false,
             foreignKey = @ForeignKey(name = "FK_PROFILE_USER")) // Maps this field to the USER_ID column in the PROFILES table with a foreign key constraint
     private User user;
+
+    // A constructor that takes everything except the id
+    public Profile(String bio, byte[] personalPhoto, User user) {
+        this.bio = bio;
+        this.personalPhoto = personalPhoto;
+        this.user = user;
+    }
 }
 

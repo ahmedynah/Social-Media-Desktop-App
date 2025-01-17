@@ -1,11 +1,11 @@
 package com.debi.socialmediaapp.utils;
 
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
-import javafx.scene.Node;
 
 import java.io.IOException;
 
@@ -17,11 +17,10 @@ import java.io.IOException;
  * @version 1.0.0
  * @since 1.0.0
  */
-
 public class GeneralUtil {
     public static void redirectToView(String viewName, Node element) {
         try {
-            FXMLLoader loader = new FXMLLoader(GeneralUtil.class.getResource("/com/debi/socialmediaapp/" + viewName + ".fxml"));
+            FXMLLoader loader = new FXMLLoader(GeneralUtil.class.getResource("/fxml/" + viewName + ".fxml"));
             Parent root = loader.load();
 
             Stage stage = (Stage) element.getScene().getWindow();
@@ -47,6 +46,4 @@ public class GeneralUtil {
         alert.setContentText(message);
         alert.showAndWait();
     }
-
-
 }
