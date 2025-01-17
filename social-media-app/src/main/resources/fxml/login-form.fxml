@@ -4,31 +4,31 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.debi.socialmediaapp.controllers.ModernLoginController"
+      fx:controller="com.debi.socialmediaapp.controllers.LoginController"
       styleClass="auth-form"
       spacing="15"
       alignment="CENTER"
       fillWidth="true">
     
-    <TextField fx:id="emailField" 
+    <TextField fx:id="email"
               promptText="Email"
               styleClass="auth-field"/>
     
-    <PasswordField fx:id="passwordField" 
+    <PasswordField fx:id="password"
                   promptText="Password"
                   styleClass="auth-field"/>
     
-    <HBox styleClass="remember-me-container">
-        <CheckBox fx:id="rememberMe" 
-                text="Remember me" 
-                styleClass="remember-checkbox"/>
-    </HBox>
+<!--    <HBox styleClass="remember-me-container">-->
+<!--        <CheckBox fx:id="rememberMe" -->
+<!--                text="Remember me" -->
+<!--                styleClass="remember-checkbox"/>-->
+<!--    </HBox>-->
     
     <Button text="SIGN IN" 
             styleClass="auth-button"
-            onAction="#handleLogin"/>
+            onAction="#submitLoginForm"/>
     
-    <Hyperlink text="Forgot Password?" 
-              styleClass="forgot-link"
-              onAction="#handleForgotPassword"/>
+<!--    <Hyperlink text="Forgot Password?" -->
+<!--              styleClass="forgot-link"-->
+<!--              onAction="#handleForgotPassword"/>-->
 </VBox>

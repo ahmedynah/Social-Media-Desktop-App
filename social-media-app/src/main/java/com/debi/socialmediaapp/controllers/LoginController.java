@@ -30,6 +30,7 @@ public class LoginController {
             GeneralUtil.showErrorAlert("invalid credentials");
             return;
         }
+
         GeneralUtil.redirectToView("profile-view", email);
     }
 
