@@ -87,7 +87,7 @@ public class ProfileController {
 
             // Pass data to the Edit Profile controller if needed
             EditProfileController controller = loader.getController();
-            controller.setProfileData(bioText.getText()); // Pass current bio to edit screen
+            controller.setProfileData(); // Pass current bio to edit screen
 
             stage.showAndWait(); // Wait for the edit screen to close before proceeding
         } catch (IOException e) {

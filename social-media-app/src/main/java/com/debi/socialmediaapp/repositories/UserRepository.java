@@ -38,6 +38,70 @@ public class UserRepository {
     }
 
     /**
+     * Updates the first name of a user by their ID.
+     *
+     * @param userId    the ID of the user
+     * @param firstName the new first name
+     */
+    public void updateFirstNameByUserId(Long userId, String firstName) {
+        executeUpdate(userId, user -> user.setFirstName(firstName));
+    }
+
+    /**
+     * Updates the last name of a user by their ID.
+     *
+     * @param userId   the ID of the user
+     * @param lastName the new last name
+     */
+    public void updateLastNameByUserId(Long userId, String lastName) {
+        executeUpdate(userId, user -> user.setLastName(lastName));
+    }
+
+    /**
+     * Updates the email of a user by their ID.
+     *
+     * @param userId the ID of the user
+     * @param email  the new email
+     */
+    public void updateEmailByUserId(Long userId, String email) {
+        executeUpdate(userId, user -> user.setEmail(email));
+    }
+
+    /**
+     * Updates the password of a user by their ID.
+     *
+     * @param userId   the ID of the user
+     * @param password the new password
+     */
+    public void updatePasswordByUserId(Long userId, String password) {
+        executeUpdate(userId, user -> user.setPassword(password));
+    }
+
+    /**
+     * Generic method to update a user's attribute by ID.
+     *
+     * @param userId the ID of the user
+     * @param updater a lambda expression defining the update logic
+     */
+    private void executeUpdate(Long userId, java.util.function.Consumer<User> updater) {
+        Transaction transaction = null;
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            transaction = session.beginTransaction(); // Start a transaction
+            User user = session.get(User.class, userId); // Fetch the user by ID
+            if (user != null) {
+                updater.accept(user); // Apply the update logic
+                session.update(user); // Update the user
+            }
+            transaction.commit(); // Commit the transaction
+        } catch (Exception e) {
+            if (transaction != null && transaction.isActive()) {
+                transaction.rollback(); // Roll back the transaction in case of an error
+            }
+            e.printStackTrace(); // Print the stack trace for debugging purposes
+        }
+    }
+
+    /**
      * Retrieves a user from the database by its ID.
      *
      * @param id the ID of the user to be fetched
