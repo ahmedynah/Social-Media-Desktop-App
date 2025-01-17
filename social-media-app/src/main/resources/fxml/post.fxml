@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="339.0" prefWidth="402.0" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <VBox prefWidth="400" spacing="10" styleClass="post-container">
+        <!-- Header -->
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <ImageView fx:id="profilePicture" fitHeight="40" fitWidth="40">
+            <image>
+               <Image url="@../imgs/user-profile-svgrepo-com.png" />
+            </image></ImageView>
+            <VBox>
+                <Label styleClass="username" text="Mahmoud Hamwi" />
+                <Label styleClass="timestamp" text="Feb 14, 2021 at 01:15 AM" />
+            </VBox>
+        </HBox>
+
+        <!-- Content -->
+        <Label styleClass="post-text" text="JavaFX UI: Admin Dashboard Design with Line Chart and Pie Chart" wrapText="true" />
+        <ImageView fx:id="dashboardPreview" fitHeight="200" fitWidth="380">
+         <image>
+            <Image url="@../imgs/OIP.jpg" />
+         </image></ImageView>
+
+        <!-- Footer -->
+        <HBox alignment="CENTER" spacing="10" styleClass="footer-section">
+            <Label styleClass="reaction-label" text="10">
+            <graphic>
+               <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../imgs/like-svgrepo-com.png" />
+                  </image>
+               </ImageView>
+            </graphic></Label>
+            <Separator orientation="VERTICAL" prefHeight="15" />
+            <Label styleClass="comment-label" text="2 comments">
+            <graphic>
+               <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../imgs/comment-3-svgrepo-com.png" />
+                  </image>
+               </ImageView>
+            </graphic></Label>
+            <Separator orientation="VERTICAL" prefHeight="15" />
+            <Label styleClass="share-label" text="3 shares">
+            <graphic>
+               <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../imgs/share-arrow-svgrepo-com.png" />
+                  </image>
+               </ImageView>
+            </graphic></Label>
+        </HBox>
+        <!-- Comments Section -->
+        <VBox spacing="10" styleClass="comments-section">
+            <!-- Topmost Comments -->
+            <VBox spacing="5" styleClass="top-comments">
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <ImageView fx:id="commentUser1Picture" fitHeight="30" fitWidth="30">
+                  <image>
+                     <Image url="@../imgs/user-profile-svgrepo-com.png" />
+                  </image></ImageView>
+                    <VBox>
+                        <Label styleClass="comment-username" text="User1" />
+                        <Label styleClass="comment-text" text="This is a great design!" />
+                    </VBox>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <ImageView fx:id="commentUser2Picture" fitHeight="30" fitWidth="30">
+                  <image>
+                     <Image url="@../imgs/user-profile-svgrepo-com.png" />
+                  </image></ImageView>
+                    <VBox>
+                        <Label styleClass="comment-username" text="User2" />
+                        <Label styleClass="comment-text" text="Impressive work, Mahmoud!" />
+                    </VBox>
+                </HBox>
+            </VBox>
+         <Separator prefWidth="200.0">
+            <padding>
+               <Insets left="15.0" right="15.0" />
+            </padding>
+         </Separator>
+
+            <!-- Add Comment Section -->
+            <HBox alignment="CENTER_LEFT" spacing="10" styleClass="add-comment-section">
+                <ImageView fx:id="currentUserPicture" fitHeight="30" fitWidth="30">
+               <image>
+                  <Image url="@../imgs/user-profile-svgrepo-com.png" />
+               </image></ImageView>
+                <TextField fx:id="commentInput" maxWidth="1.7976931348623157E308" promptText="Write a comment..." styleClass="comment-text-field" HBox.hgrow="ALWAYS" />
+                <Button styleClass="comment-button" text="Post" />
+            </HBox>
+        </VBox>
+    </VBox>
+</AnchorPane>
