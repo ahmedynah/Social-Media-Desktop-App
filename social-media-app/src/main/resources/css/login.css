@@ -1,0 +1,33 @@
+.bgImgLeft{
+ -fx-background-image: url("../imgs/flipped-triangle.png");
+/* -fx-background-size: 50% 50%;*/
+ -fx-background-repeat: no-repeat;
+ -fx-background-position: center;
+ -fx-background-size: cover;
+}
+.bgImgRight{
+ -fx-background-image: url("../imgs/right-angle-triangle.png");
+/* -fx-background-size: 50% 50%;*/
+ -fx-background-repeat: no-repeat;
+ -fx-background-position: center;
+ -fx-background-size: cover;
+}
+.bgColor {
+    -fx-background-color: #
+}
+.rightVbox{
+    -fx-background-color:  rgb(100,100,100,0.25);
+    -fx-background-radius: 5px;
+}
+.leftVbox{
+    -fx-background-color:  #A8394B;
+    -fx-background-radius: 5px;
+}
+
+.image_user{
+    -fx-border-radius: 50%;
+    -fx-border-width: 2px;
+}
+.background_for_text{
+    -fx-background-color: white;
+}

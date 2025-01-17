@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<VBox prefHeight="106.0" prefWidth="436.0" spacing="10" style="-fx-background-color: white; -fx-background-radius: 8;"
+      styleClass="status-input-container" stylesheets="@../css/status-input-styles.css"
+      xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.debi.socialmediaapp.controllers.StatusViewController">
+
+    <padding>
+        <Insets bottom="10" left="15" right="15" top="10"/>
+    </padding>
+
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <!-- Profile Picture -->
+        <ImageView fx:id="profilePicture" fitHeight="40" fitWidth="40" styleClass="profile-picture">
+            <image>
+                <Image url="@../imgs/user-profile-svgrepo-com.png"/>
+            </image>
+        </ImageView>
+
+        <!-- Status Input Field -->
+        <TextField fx:id="statusInput" promptText="What's on your mind?" styleClass="status-text-field"
+                   HBox.hgrow="ALWAYS"/>
+    </HBox>
+
+    <!-- Action Buttons -->
+    <HBox alignment="CENTER_RIGHT" spacing="2.0">
+
+        <JFXButton fx:id="uploadImageButton" onAction="#handleUploadImage"
+                   styleClass="action-button, photo-video-button" text="Images/Videos">
+            <graphic>
+                <ImageView fitHeight="20" fitWidth="20">
+                    <image>
+                        <Image url="@../imgs/image-plus-svgrepo-com-green.png"/>
+                    </image>
+                </ImageView>
+            </graphic>
+        </JFXButton>
+
+        <JFXButton fx:id="submitButton" onAction="#handleSubmitPost" styleClass="action-button, feelings-button"
+                   text="Post">
+            <graphic>
+                <ImageView fitHeight="20" fitWidth="20">
+                    <image>
+                        <Image url="@../imgs/efficiency-svgrepo-com.png"/>
+                    </image>
+                </ImageView>
+            </graphic>
+        </JFXButton>
+    </HBox>
+</VBox>

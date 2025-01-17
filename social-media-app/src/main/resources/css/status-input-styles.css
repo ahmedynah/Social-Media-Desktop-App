@@ -1,0 +1,38 @@
+.status-input-container {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 1);
+}
+
+.profile-picture {
+    -fx-background-radius: 50%;
+}
+
+.status-text-field {
+    -fx-background-color: #f0f2f5;
+    -fx-background-radius: 20;
+    -fx-padding: 8 15;
+    -fx-prompt-text-fill: #65676b;
+}
+
+.action-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #65676b;
+    -fx-padding: 8 15;
+    -fx-cursor: hand;
+}
+
+.action-button:hover {
+    -fx-background-color: #f0f2f5;
+    -fx-background-radius: 4;
+}
+
+.live-video-button .image-view {
+    -fx-fill: #f3425f;
+}
+
+.photo-video-button .image-view {
+    -fx-fill: #45bd62;
+}
+
+.feelings-button .image-view {
+    -fx-fill: #f7b928;
+}

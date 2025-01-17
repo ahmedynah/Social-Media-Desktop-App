@@ -1,0 +1,110 @@
+.main-container {
+    -fx-background-color: #f5f5f5;
+}
+
+.auth-container {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 1);
+    -fx-background-radius: 20;
+    -fx-min-width: 800px;
+    -fx-min-height: 500px;
+    -fx-max-width: 800px;
+    -fx-max-height: 500px;
+}
+
+.promo-panel {
+    -fx-background-color: linear-gradient(to bottom right, #8860D0, #FF5C87);
+    -fx-min-width: 300px;
+    -fx-padding: 40;
+    -fx-alignment: center;
+    -fx-spacing: 20;
+}
+
+.promo-title {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.promo-text {
+    -fx-font-size: 16px;
+    -fx-text-fill: white;
+    -fx-text-alignment: center;
+    -fx-wrap-text: true;
+}
+
+.promo-button {
+    -fx-background-color: transparent;
+    -fx-border-color: white;
+    -fx-border-width: 2;
+    -fx-text-fill: white;
+    -fx-background-radius: 25;
+    -fx-border-radius: 25;
+    -fx-padding: 12 30;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.promo-button:hover {
+    -fx-background-color: rgba(255,255,255,0.1);
+}
+
+.form-panel {
+    -fx-padding: 40;
+    -fx-min-width: 500px;
+    -fx-alignment: center;
+    -fx-spacing: 20;
+    /* Add these to ensure proper centering */
+    -fx-fill-width: true;
+    -fx-fill-height: true;
+}
+
+.auth-form {
+    -fx-spacing: 15;
+    -fx-max-width: 400px;
+    -fx-alignment: center;
+    /* Add these to ensure the form stays centered */
+    -fx-fill-width: true;
+    -fx-fill-height: true;
+    -fx-content-display: center;
+}
+
+.auth-field {
+    -fx-background-color: #f5f5f5;
+    -fx-background-radius: 8;
+    -fx-border-width: 0;
+    -fx-padding: 12;
+    -fx-font-size: 14px;
+    -fx-min-width: 300px;
+}
+
+.auth-field:focused {
+    -fx-background-color: #f0f0f0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 1);
+}
+
+.auth-button {
+    -fx-background-color: #8860D0;
+    -fx-text-fill: white;
+    -fx-background-radius: 25;
+    -fx-min-width: 200px;
+    -fx-padding: 12 30;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.remember-me-container {
+    -fx-alignment: center-left;
+    -fx-min-width: 300px;
+}
+
+.remember-checkbox {
+    -fx-text-fill: #757575;
+}
+
+.forgot-link, .back-link {
+    -fx-text-fill: #8860D0;
+    -fx-font-size: 14px;
+    -fx-border-width: 0;
+}
+

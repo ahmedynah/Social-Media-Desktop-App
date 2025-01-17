@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.debi.socialmediaapp.controllers.SignupController"
+      styleClass="auth-form"
+      spacing="15"
+      alignment="CENTER"
+      fillWidth="true">
+    
+    <TextField fx:id="signupName" 
+              promptText="Full Name"
+              styleClass="auth-field"/>
+    
+    <TextField fx:id="signupEmail" 
+              promptText="Email"
+              styleClass="auth-field"/>
+    
+    <PasswordField fx:id="signupPassword" 
+                  promptText="Password"
+                  styleClass="auth-field"/>
+    
+    <PasswordField fx:id="confirmPassword" 
+                  promptText="Confirm Password"
+                  styleClass="auth-field"/>
+    
+    <Button text="CREATE ACCOUNT" 
+            styleClass="auth-button"
+            onAction="#handleSignup"/>
+    
+    <Hyperlink text="Back to Login" 
+              styleClass="back-link"
+              onAction="#handleBackToLogin"/>
+</VBox>

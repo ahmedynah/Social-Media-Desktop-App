@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<StackPane styleClass="main-container" stylesheets="@../css/modern-login-styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.debi.socialmediaapp.controllers.AuthController">
+
+    <HBox fx:id="authContainer" styleClass="auth-container">
+        <!-- Left Panel - Sign Up Promo -->
+        <VBox fx:id="promoPanel" styleClass="promo-panel">
+            <Label styleClass="promo-title" text="New Here?" />
+            <Label styleClass="promo-text" text="Sign up and discover great opportunities!" />
+            <Button onAction="#handleSignupClick" styleClass="promo-button" text="SIGN UP" />
+        </VBox>
+
+        <!-- Right Panel - Login Form -->
+        <VBox fx:id="formPanel" styleClass="form-panel">
+            <!-- Login Form -->
+            <VBox fx:id="loginForm" styleClass="auth-form">
+                <TextField fx:id="emailField" promptText="Email" styleClass="auth-field" />
+
+                <PasswordField fx:id="passwordField" promptText="Password" styleClass="auth-field" />
+
+                <HBox styleClass="remember-me-container">
+                    <CheckBox fx:id="rememberMe" styleClass="remember-checkbox" text="Remember me" />
+                </HBox>
+
+                <Button onAction="#handleLogin" styleClass="auth-button" text="SIGN IN" />
+
+                <Hyperlink onAction="#handleForgotPassword" styleClass="forgot-link" text="Forgot Password?" />
+            </VBox>
+
+            <!-- Sign Up Form (initially hidden) -->
+            <VBox fx:id="signupForm" styleClass="auth-form" visible="false">
+                <TextField fx:id="signupName" promptText="Full Name" styleClass="auth-field" />
+
+                <TextField fx:id="signupEmail" promptText="Email" styleClass="auth-field" />
+
+                <PasswordField fx:id="signupPassword" promptText="Password" styleClass="auth-field" />
+
+                <PasswordField fx:id="confirmPassword" promptText="Confirm Password" styleClass="auth-field" />
+
+                <Button onAction="#handleSignup" styleClass="auth-button" text="CREATE ACCOUNT" />
+
+                <Hyperlink onAction="#showLoginForm" styleClass="back-link" text="Back to Login" />
+            </VBox>
+        </VBox>
+    </HBox>
+</StackPane>
