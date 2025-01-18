@@ -1,8 +1,14 @@
 package com.debi.socialmediaapp.controllers;
 
+import com.debi.socialmediaapp.models.Profile;
+import com.debi.socialmediaapp.models.User;
+import com.debi.socialmediaapp.repositories.ProfileRepository;
+import com.debi.socialmediaapp.repositories.UserRepository;
+import com.debi.socialmediaapp.utils.GeneralUtil;
+import com.debi.socialmediaapp.utils.PasswordUtil;
+import com.debi.socialmediaapp.utils.ProfileHelper;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
-import javafx.scene.control.PasswordField;
+
 import javafx.scene.control.TextField;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,29 +19,86 @@ public class SignupController {
     @Getter
     AuthContainerController authContainerController;
 
+
+    UserRepository userRepository = new UserRepository();
+    ProfileRepository profileRepository = new ProfileRepository();
     @FXML
-    private TextField signupName;
+    private TextField firstName;
     @FXML
-    private TextField signupEmail;
+    private TextField lastName;
     @FXML
-    private PasswordField signupPassword;
+    private TextField email;
     @FXML
-    private PasswordField confirmPassword;
+    private TextField password;
+    @FXML
+    private TextField confirmPassword;
 
     @FXML
-    private void handleSignup() {
-        // Implement signup logic
-        String name = signupName.getText();
-        String email = signupEmail.getText();
-        String password = signupPassword.getText();
-        // Process signup...
+    private void submitRegistrationForm() {
+        if (!validateFields()) {
+            return;
+        }
+
+        User user = new User(firstName.getText(),
+                lastName.getText(),
+                email.getText(),
+                PasswordUtil.hashPassword(password.getText())
+        );
+        byte[] defaultImage = ProfileHelper.getDefaultImageBytes();
+        Profile profile = new Profile("No bio yet.", defaultImage, user);
+        userRepository.saveUser(user);
+        profileRepository.saveProfile(profile);
+        GeneralUtil.showSuccessAlert("your account has bees registered successfully");
+        handleBackToLogin();
+    }
+
+
+    public boolean validateFields() {
+        if (firstName.getText().isEmpty()) {
+            GeneralUtil.showErrorAlert("First name is required.");
+            return false;
+        }
+
+        if (lastName.getText().isEmpty()) {
+            GeneralUtil.showErrorAlert("Last name is required.");
+            return false;
+        }
+
+        if (email.getText().isEmpty()) {
+            GeneralUtil.showErrorAlert("Email is required.");
+            return false;
+        }
+
+        if (!isValidEmail(email.getText())) {
+            GeneralUtil.showErrorAlert("Invalid email format.");
+            return false;
+        }
+
+        if (password.getText().isEmpty()) {
+            GeneralUtil.showErrorAlert("Password is required.");
+            return false;
+        }
+
+        if (confirmPassword.getText().isEmpty()) {
+            GeneralUtil.showErrorAlert("Confirm password is required.");
+            return false;
+        }
+
+        if (!password.getText().equals(confirmPassword.getText())) {
+            GeneralUtil.showErrorAlert("Passwords do not match.");
+            return false;
+        }
+
+        return true;
+    }
+
+    private boolean isValidEmail(String email) {
+        String emailRegex = "^[\\w.%+-]+@[\\w.-]+\\.[a-zA-Z]{2,6}$";
+        return email.matches(emailRegex);
     }
 
     @FXML
     private void handleBackToLogin() {
-
-//         Get parent controller and trigger form switch
-        Node node = signupName.getScene().getRoot();
         authContainerController.toggleAuthForm();
     }
 }

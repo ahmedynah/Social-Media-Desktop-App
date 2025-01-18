@@ -6,18 +6,21 @@
       fx:controller="com.debi.socialmediaapp.controllers.SignupController"
       styleClass="auth-form"
       spacing="15"
-      alignment="CENTER"
-      fillWidth="true">
+      alignment="CENTER">
     
-    <TextField fx:id="signupName" 
-              promptText="Full Name"
+    <TextField fx:id="firstName"
+              promptText="First Name"
               styleClass="auth-field"/>
-    
-    <TextField fx:id="signupEmail" 
+
+    <TextField fx:id="lastName"
+               promptText="Last Name"
+               styleClass="auth-field"/>
+
+    <TextField fx:id="email"
               promptText="Email"
               styleClass="auth-field"/>
     
-    <PasswordField fx:id="signupPassword" 
+    <PasswordField fx:id="password"
                   promptText="Password"
                   styleClass="auth-field"/>
     
@@ -27,7 +30,7 @@
     
     <Button text="CREATE ACCOUNT" 
             styleClass="auth-button"
-            onAction="#handleSignup"/>
+            onAction="#submitRegistrationForm"/>
     
     <Hyperlink text="Back to Login" 
               styleClass="back-link"
